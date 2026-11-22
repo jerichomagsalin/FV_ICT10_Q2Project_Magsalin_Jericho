@@ -1,5 +1,7 @@
 from pyscript import display, document
 
+# Section for Club Checking and Management
+
 def clubcheck (e):
     firstnames = ["Jericho", "Jericho2", "Jericho3", "Jericho4", "Jericho5"]
     lastnames = ["Magsalin", "Magsalin2", "Magsalin3", "Magsalin4", "Magsalin5"]
@@ -9,9 +11,19 @@ def clubcheck (e):
     lname = document.getElementById('lastname').value
 
     check = "Jericho" in document.getElementById('firstname').value
-    display(check)
+    display(check, target="output")
 
-# Elements
+club_members = {"Jericho Magsalin"}
+
+def add_member (e):
+    global club_members
+    club_members = club_members.union("data")
+    display("data", target = "newmember")
+
+    document.getElementById("firstname").value
+    document.getElementById("lastname").value
+
+# Section for Element Checker
 # Dictionary with information about Elements
 # Element Name: symbol, atomic number, atomic weight
 
@@ -49,15 +61,3 @@ def search_element(e):
     document.getElementById("symbol").innerText = result[0]
     document.getElementById("number").innerText = result[1]
     document.getElementById("weight").innerText = result[2]
-
-# current scores for lists
-
-club_members = {"Jericho Magsalin"}
-
-def add_member (e):
-    global club_members
-    club_members = club_members.union("data")
-    display("data", target = "newmember")
-
-    document.getElementById("firstname").value
-    document.getElementById("lastname").value

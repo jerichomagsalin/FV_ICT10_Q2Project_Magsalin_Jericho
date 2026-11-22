@@ -6,49 +6,94 @@
     <title>Club checker</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css"/>
     <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
-    <script type="py" src="main.py" ></script>
     <style>
-        header {
-            font-size:40px;
+         * {
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
         }
 
         body {
-            background-color:#6231a6
-        }
-        .resultdiv {
-
-            background-color: green;
-            display: none;
-        
+            background-color: #FCE8A4
         }
 
-        .formdiv {
+        h1 {
+            text-align:center;
+        }
+
+        input[type="text"] {
+            font-size: 18px;
+            width: 98%;
+            text-align: center;
+        }
+
+        label {
+            font-size:18px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        #form-structure {
             margin: auto;
-            background-color:lavender
+            width: 400px;
+            background-color: #337ccf;
+            padding: 25px;
+            border: 2px solid black;
+            border-radius: 4px;
         }
 
-        * {
-            font-style: Helvetica
+        .result {
+            background-color: #CCCCCC;
+            padding: 12px 25px 25px 25px;
+        }
+
+        #button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        #button:hover {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color:#81CC69;
+            border-radius: 3px;
+        }
+
+        #list-structure {
+            background-color: #CCCCCC;
+            padding: 12px 25px 25px 25px;
         }
     </style>
 </head>
 <body>
-    <header class="header1">Name Verification System</header>
-    <div class="formdiv">
-        <form action="">
-            <label for="firstname">Firstname</label>
-            <br>
-            <input type="label" id="firstname" placeholder="Jericho">
-            <br>
-            <label for="lastname">Lastname</label>
-            <br>
-            <input type="label" id="lastname" placeholder="Magsalin">
-            <br>
-            <button type="button" py-click="clubcheck">Check Member</button>
-        </form>
-    </div>
-   
-    <p id="output"></p>
+    <script type="py" src="main.py"></script>
     
+    <br><br><br>
+
+    <div id="form-structure">
+        <div class="container">
+            <h1>Club Verification</h1>
+            <label for="firstname">Firstname:</label>
+            <br>
+            <input type="text" id="firstname" placeholder="Jericho">
+            <br>
+            <label for="lastname">Lastname:</label>
+            <br>
+            <input type="text" id="lastname" placeholder="Magsalin">
+            <br><br>
+            <button type="button" id="button" py-click="clubcheck">Check Member</button>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <div id="list-structure">
+            <h3 class="center">Person is in this club:</h3>
+            <p class="center" id="output"></p>
+        </div>
+    </div>
 </body>
 </html>
